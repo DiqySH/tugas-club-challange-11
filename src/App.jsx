@@ -13,7 +13,7 @@ const productDetails = {
   largeImage_1: "/src/assets/image-product-1.png",
   largeImage_2: "/src/assets/image-product-2.png",
   largeImage_3: "/src/assets/image-product-3.png",
-  largeImage_4: "/src/assets/image-product-4.png",
+  largeImage_4: "/src/assets/image-product-4.png"
 }
 
 function Nav({countNumber}) {
@@ -22,7 +22,7 @@ function Nav({countNumber}) {
       <img src="/src/assets/sneakers.svg" alt="" />
       <div className="w-[40px] h-[40px] flex justify-center items-center relative">
         <img src="/src/assets/keranjang.svg" alt="" className="w-[20px] h-[20px]"/>
-        <p className="w-[20px] h-[20px] rounded-full bg-[#F54900] absolute top-0 right-0 flex items-center justify-center counter">{countNumber}</p>
+        <p className={`w-[20px] h-[20px] rounded-full absolute top-0 right-0 flex items-center justify-center counter ${countNumber == 0 ? "bg-transparent" : "bg-[#F54900]"}`}>{countNumber}</p>
       </div>
     </nav>
   )
@@ -47,8 +47,8 @@ function MainSection({nambah, kurang, number, addToCart}) {
           <h1 className="nama">{productDetails.nama}</h1>
           <p className="description">{productDetails.description}</p>
           <div className="flex gap-[10px]">
-            <p className="discountPrice">{productDetails.discountPrice}</p>
-            <p className="originalPrice">{productDetails.originalPrice}</p>
+            <p className="discountPrice">Rp. {productDetails.discountPrice}</p>
+            <p className="originalPrice">Rp. {productDetails.originalPrice}</p>
           </div>
           <div className="flex gap-[20px]">
             <div className="flex gap-[10px]">
