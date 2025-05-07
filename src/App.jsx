@@ -13,27 +13,27 @@ function Nav({countNumber}) {
   )
 }
 
-function MainSection({nambah, kurang, number, addToCart}) {
-  const [image, setImage] = useState(productDetails.largeImage_1)
+function MainSection({nambah, kurang, number, addToCart, product}) {
+  const [image, setImage] = useState(product.largeImage_1)
   return (
     <section className="flex justify-center items-center max-w-screen w-full min-h-screen">
       <div className="flex flex-row w-full max-w-[941px] justify-between flex-wrap">
         <div className="max-w-[400px] gap-[20px] flex flex-col w-full">
           <div className="max-w-[400px] w-full min-h-[400px] rounded-2xl" style={{backgroundImage: `url(${image})`, backgroundSize: `cover`}}></div>
           <div className="flex w-full justify-between">
-            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${productDetails.image_1})`}} onClick={() => {setImage(productDetails.largeImage_1)}}></div>
-            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${productDetails.image_2})`}} onClick={() => {setImage(productDetails.largeImage_2)}}></div>
-            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${productDetails.image_3})`}} onClick={() => {setImage(productDetails.largeImage_3)}}></div>
-            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${productDetails.image_4})`}} onClick={() => {setImage(productDetails.largeImage_4)}}></div>
+            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${product.image_1})`}} onClick={() => {setImage(product.largeImage_1)}}></div>
+            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${product.image_2})`}} onClick={() => {setImage(product.largeImage_2)}}></div>
+            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${product.image_3})`}} onClick={() => {setImage(product.largeImage_3)}}></div>
+            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${product.image_4})`}} onClick={() => {setImage(product.largeImage_4)}}></div>
           </div>
         </div>
         <div className="max-w-[420px] w-full flex flex-col justify-center gap-[20px]">
-          <p className="merk">{productDetails.merk}</p>
-          <h1 className="nama">{productDetails.nama}</h1>
-          <p className="description">{productDetails.description}</p>
+          <p className="merk">{product.merk}</p>
+          <h1 className="nama">{product.nama}</h1>
+          <p className="description">{product.description}</p>
           <div className="flex gap-[10px]">
-            <p className="discountPrice">Rp{productDetails.discountPrice}</p>
-            <p className="originalPrice">Rp{productDetails.originalPrice}</p>
+            <p className="discountPrice">Rp{product.discountPrice}</p>
+            <p className="originalPrice">Rp{product.originalPrice}</p>
           </div>
           <div className="flex gap-[20px]">
             <div className="flex gap-[10px]">
@@ -69,7 +69,7 @@ export default function App() {
   return (
     <main className="max-w-screen w-full min-h-screen">
       <Nav countNumber={countNumber}/>
-      <MainSection number={number} kurang={kurang} nambah={nambah} addToCart={addToCart}/>
+      <MainSection number={number} kurang={kurang} nambah={nambah} addToCart={addToCart} product={productDetails}/>
     </main>
   )
 }
