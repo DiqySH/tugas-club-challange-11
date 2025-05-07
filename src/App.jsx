@@ -14,17 +14,18 @@ function Nav({countNumber}) {
 }
 
 function MainSection({nambah, kurang, number, addToCart, product}) {
-  const [image, setImage] = useState(product.largeImage_1)
+  const [image, setImage] = useState(product.images[0])
   return (
     <section className="flex justify-center items-center max-w-screen w-full min-h-screen">
       <div className="flex flex-row w-full max-w-[941px] justify-between flex-wrap">
         <div className="max-w-[400px] gap-[20px] flex flex-col w-full">
           <div className="max-w-[400px] w-full min-h-[400px] rounded-2xl" style={{backgroundImage: `url(${image})`, backgroundSize: `cover`}}></div>
           <div className="flex w-full justify-between">
-            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${product.image_1})`}} onClick={() => {setImage(product.largeImage_1)}}></div>
-            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${product.image_2})`}} onClick={() => {setImage(product.largeImage_2)}}></div>
-            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${product.image_3})`}} onClick={() => {setImage(product.largeImage_3)}}></div>
-            <div className="max-w-[80px] w-full min-h-[80px] rounded-[8px] cursor-pointer" style={{backgroundImage: `url(${product.image_4})`}} onClick={() => {setImage(product.largeImage_4)}}></div>
+            {
+              product.images.map((img, index) => (
+                <div className="w-20 h-20 cursor-pointer rounded-[8px]" style={{backgroundImage: `url(${img})`, backgroundSize: `cover`}} onClick={() => setImage(product.images[index])}></div>
+              ))
+            }
           </div>
         </div>
         <div className="max-w-[420px] w-full flex flex-col justify-center gap-[20px]">
