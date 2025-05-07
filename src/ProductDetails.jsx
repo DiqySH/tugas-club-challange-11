@@ -5,10 +5,10 @@ const productDetails = {
     originalPrice: "999.000",
     discountPrice: "799.000",
     images: [
-        "./src/assets/image-product-1.png",
-        "./src/assets/image-product-2.png",
-        "./src/assets/image-product-3.png",
-        "./src/assets/image-product-4.png"
+        "./src/images/image-product-1.png",
+        "./src/images/image-product-2.png",
+        "./src/images/image-product-3.png",
+        "./src/images/image-product-4.png"
     ]
   }
 export default productDetails
