@@ -79,6 +79,7 @@ export default function App() {
   }
   function addToCart() {
     setCountNumber(countNumber + number)
+    setNumber(1)
   }
   return (
     <main className="max-w-screen w-full min-h-screen">
